@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #01080E; /* Cor de fundo escura */
+    color: #FFF; /* Cor do texto branco */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.box-content {
+    background-color: #16213E; /* Cor do fundo da caixa de texto */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#response-text {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    background-color: #1b2845; /* Cor de fundo da área de resposta */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #FFF; /* Cor do texto da resposta */
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#field-text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #ffffff; /* Cor do fundo do input */
+    color: rgb(0, 0, 0); /* Cor do texto no input */
+    font-size: 14px;
+    outline: none; /* Remove a borda padrão ao clicar */
+}
+
+#button-gerateText {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4c5b92; /* Cor do botão */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#button-gerateText:hover {
+    background-color: #16213E; /* Cor do botão ao passar o mouse */
+}
