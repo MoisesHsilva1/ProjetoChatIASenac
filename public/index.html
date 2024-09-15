@@ -12,11 +12,16 @@
 <body>
   <h1 class="title">EntrevistandoIA</h1>
   <div class="box-content">
-    <span id="response-text" aria-live="polite"></span>
-    <input type="text" id="field-message" autocomplete="off"
-      placeholder="Digite (iniciar) para iniciarmos a entrevista">
+    <div class="avatar-section">
+      <img src="image/avatar.png" alt="Avatar" class="avatar">
+      <P>RecrutadoraIA</P>
+      <span id="response-IA" aria-live="polite"></span>
+      <span id="response-text" aria-live="polite"></span>
+    </div>
+    <input type="text" id="field-message" placeholder="Digite (iniciar) para iniciarmos a entrevista">
     <button id="button-gerateText" aria-label="Enviar mensagem">Enviar</button>
   </div>
+
 </body>
 
 </html>

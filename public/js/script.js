@@ -1,9 +1,13 @@
 async function sendMessage() {
-    const fieldResponse = document.getElementById('response-text');
+    const fieldResponseUser = document.getElementById('response-text');
     const fieldChat = document.getElementById('field-message');
+    const responseIa = document.getElementById('response-IA');
     const message = fieldChat.value;
 
-    fieldResponse.innerHTML += `<p>Usuario: ${message}</p>`;
+    fieldResponseUser.innerHTML = '';
+    responseIa.innerHTML = '';
+
+    fieldResponseUser.innerHTML += `<p style="color: yellow;">Você: ${message}</p>`;
 
     try {
         const response = await fetch('http://localhost:3000/chat', {
@@ -15,11 +19,19 @@ async function sendMessage() {
         });
 
         const data = await response.json();
-        fieldResponse.innerHTML += `<p>IA: ${data.reply}</p>`;
+        responseIa.innerHTML += `<p style="color: white;">IA: ${data.reply}</p>`;
     } catch (error) {
-        fieldResponse.innerHTML += `<p>Erro: Não foi possível se conectar ao servidor.</p>`;
+        fieldResponseUser.innerHTML += `<p style="color: red;">Erro: Não foi possível se conectar ao servidor.</p>`;
     }
 
     fieldChat.value = '';
+}
+
+function clearHistory() {
+    const fieldResponseUser = document.getElementById('response-text');
+    const responseIa = document.getElementById('response-IA');
+
+    fieldResponseUser.innerHTML = '';
+    responseIa.innerHTML = '';
 }
 document.getElementById('button-gerateText').addEventListener('click', sendMessage);
