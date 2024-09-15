@@ -3,8 +3,8 @@
     padding: 0;
 }
 body {
-    background-color: #01080E; /* Cor de fundo escura */
-    color: #FFF; /* Cor do texto branco */
+    background-color: #01080E; 
+    color: #FFF; 
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@ body {
 }
 
 .box-content {
-    background-color: #16213E; /* Cor do fundo da caixa de texto */
+    background-color: #16213E; 
     border-radius: 10px;
     padding: 20px;
     width: 300px;
@@ -36,11 +36,11 @@ body {
     display: block;
     width: 100%;
     min-height: 50px;
-    background-color: #1b2845; /* Cor de fundo da área de resposta */
+    background-color: #1b2845; 
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    color: #FFF; /* Cor do texto da resposta */
+    color: #FFF; 
     font-size: 14px;
     line-height: 1.4;
 }
@@ -51,17 +51,17 @@ body {
     border-radius: 5px;
     border: none;
     margin-bottom: 10px;
-    background-color: #ffffff; /* Cor do fundo do input */
-    color: rgb(0, 0, 0); /* Cor do texto no input */
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
     font-size: 14px;
-    outline: none; /* Remove a borda padrão ao clicar */
+    outline: none; 
 }
 
 #button-gerateText {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #4c5b92; /* Cor do botão */
+    background-color: #4c5b92;
     color: white;
     font-weight: bold;
     border: none;
@@ -70,5 +70,5 @@ body {
 }
 
 #button-gerateText:hover {
-    background-color: #16213E; /* Cor do botão ao passar o mouse */
+    background-color: #16213E;
 }
