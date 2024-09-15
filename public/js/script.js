@@ -1,47 +1,25 @@
-const { GoogleAuth } = require('google-auth-library');
-const fetch = require('node-fetch');
-const fs = require('fs');
+async function sendMessage() {
+    const fieldResponse = document.getElementById('response-text');
+    const fieldChat = document.getElementById('field-message');
+    const message = fieldChat.value;
 
-const keyfile = 'projectGoogle.json';
+    fieldResponse.innerHTML += `<p>Usuario: ${message}</p>`;
 
-const projectId = 'project-id';
-const sessionId = 'session-id';
+    try {
+        const response = await fetch('http://localhost:3000/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message }),
+        });
 
+        const data = await response.json();
+        fieldResponse.innerHTML += `<p>IA: ${data.reply}</p>`;
+    } catch (error) {
+        fieldResponse.innerHTML += `<p>Erro: Não foi possível se conectar ao servidor.</p>`;
+    }
 
-async function getToken() {
-    const auth = new GoogleAuth({
-        keyFile: keyfile,
-        scopes: ['https://www.googleapis.com/auth/cloud-platform']
-    });
-    const client = await auth.getClient();
-    const tokenresponse =  await client.getAccessToken();
-    return tokenresponse.token;
+    fieldChat.value = '';
 }
-
-async function sendMessageDialogflow(message) {
-    const token = await getToken();
-    const url = `https://dialogflow.googleapis.com/v2/projects/${projectId}/agent/sessions/${sessionId}:detectIntent`;
-
-    const body = {
-        queryInput: {
-            text: {
-                text: message,
-                languageCode: 'pt-BR'
-            }
-        }
-    };
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(body)
-    });
-
-    const json = await response.json();
-    console.log('Dialogflow response:', dataqueryResult.fulfillmentText);
-}
-
-sendMessageDialogflow('Olá');
+document.getElementById('button-gerateText').addEventListener('click', sendMessage);
