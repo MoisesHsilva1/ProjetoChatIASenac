@@ -1,0 +1,21 @@
+db.responses.insertMany([
+    { message: 'iniciar', response: 'Sou uma IA que simula entrevistas para ajudar você a desenvolver habilidades socioemocionais. Pratique suas respostas e ganhe confiança para se preparar para o sucesso!' },
+    { message: 'vamos', response: 'Ótimo! Primeiro preciso que você escolha um dos meus 3 níveis: 1 - fase inicial, 2 - fase intermediária e 3 - fase avançada.' },
+    { message: 'nivel 1', response: 'Parabéns! Você escolheu o nível 1. Vamos começar?' },
+    { message: 'começar nivel 1', response: 'Pergunta 1: Conte-me sobre um desafio que você enfrentou e como lidou com ele.' },
+    { message: 'pergunta 2 nivel 1', response: 'Pergunta 2: Como você lida com situações de pressão e estresse?' },
+    { message: 'pergunta 3 nivel 1', response: 'Pergunta 3: Como você lida com situações de conflito no trabalho?' },
+    { message: 'nivel 2', response: 'Parabéns! Você escolheu o nível 2. Vamos começar?' },
+    { message: "começar nivel 2", response: "Pergunta 1: Fale sobre um projeto em que você teve um papel significativo. Quais foram os desafios e resultados?" },
+    { message: "pergunta 2 nivel 2", response: "Pergunta 2: Como você prioriza suas tarefas quando tem vários prazos simultâneos?" },
+    { message: "pergunta 3 nivel 2", response: "Pergunta 3: Conte sobre uma vez em que você teve que aprender uma nova habilidade rapidamente. Como você fez isso?" },
+    { message: "nivel 3", response: 'Parabéns! Você escolheu o nível 3. Vamos começar?' },
+    { message: "começar nivel 3", response: "Pergunta 1: Descreva uma situação em que você teve que liderar uma equipe para resolver um problema complexo. Qual foi o resultado?" },
+    { message: "pergunta 2 nivel 3", response: "Pergunta 2: Como você gerencia a resistência a mudanças dentro de uma equipe ou projeto?" },
+    { message: "pergunta 3 nivel 3", response: "Pergunta 3: Fale sobre uma decisão difícil que você teve que tomar com base em informações incompletas. Como você abordou a situação?" },
+    { message: "finalizar", response: "Parabéns por concluir a prática! Se precisar de mais ajuda, estarei por aqui." },
+    { message: "onde posso encontrar vagas de emprego?", response: "Você pode encontrar algumas oportunidades no próprio Senac através do portal de recrutamento: [Senac Vagas](https://www.sp.senac.br/recruPortal/portal/mural)." },
+    { message: "Onde posso aplicar minhas habilidades em vagas de emprego?", response: "Você pode encontrar algumas oportunidades no próprio Senac através do portal de recrutamento: [Senac Vagas](https://www.sp.senac.br/recruPortal/portal/mural)." },
+    { message: "qual lugar posso realizar cursos?", response: "Você pode encontrar uma variedade de cursos de capacitação no Senac através do portal de cursos livres: [Senac Cursos](https://www.sp.senac.br/cursos-livres)." },
+    { message: "encerar", response: "Obrigado por praticar comigo! Se precisar de mais ajuda, estarei por aqui." }
+]);

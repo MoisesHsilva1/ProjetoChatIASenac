@@ -19,7 +19,7 @@ async function sendMessage() {
         });
 
         const data = await response.json();
-        responseIa.innerHTML += `<p style="color: white;">IA: ${data.reply}</p>`;
+        responseIa.innerHTML += `<p style="color: white;">IA: ${data.response}</p>`;
     } catch (error) {
         fieldResponseUser.innerHTML += `<p style="color: red;">Erro: Não foi possível se conectar ao servidor.</p>`;
     }

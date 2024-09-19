@@ -1,38 +1,47 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const port = 3000;
+
 app.use(cors({
     origin: '*'
 }));
+app.use(express.json());
 
-app.use(bodyParser.json());
+mongoose.connect('mongodb://localhost:27017/chat')
+    .then(() => console.log('Conectado ao MongoDB'))
+    .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
 
-app.post('/chat', (req, res) => {
+const responseSchema = new mongoose.Schema({
+    message: String,
+    response: String
+});
+
+const Response = mongoose.model('Response', responseSchema);
+
+app.post('/chat', async (req, res) => {
     const userMessage = req.body.message ? req.body.message.toLowerCase() : '';
-    console.log('Mensagem recebida:', userMessage); 
 
-    let response = '';
+    try {
+        const responseDb = await Response.findOne({ message: userMessage });
 
-    if (userMessage.includes('iniciar')) {
-        response = 'Seja Bem-vindo! A entrevistandoIA meu objetivo aqui é te ajudar a desenvolver algumas habilidades socioemocionais. Vamos começar?';
-    } else if (userMessage.includes('vamos') || userMessage.includes('começar')) {
-        response = 'Ótimo! Primeiro preciso que você escolha um dos meus 3 níveis: 1 - fase inicial, 2 - fase intermediária e 3 - fase avançada.';
-    } else if (userMessage.includes('nivel 1') || userMessage.includes('1')) {
-        response = 'Parabéns! Você escolheu o nível 1. Vamos começar?';
-    } else if (userMessage.includes('nivel 2') || userMessage.includes('2')) {
-        response = 'Parabéns! Você escolheu o nível 2. Vamos começar?';
-    } else if (userMessage.includes('nivel 3') || userMessage.includes('3')) {
-        response = 'Parabéns! Você escolheu o nível 3. Vamos começar?';
-    } else {
-        response = 'Desculpe, não entendi sua pergunta. Pode reformular?';
+        if (responseDb) {
+            console.log(`Resposta encontrada: ${responseDb.response}`);
+            res.json({ response: responseDb.response });
+        } else {
+            res.json({ response: 'Desculpe, não entendi sua pergunta. Pode reformular?' });
+        }
+    } catch (error) {
+        res.status(500).json({ response: 'Erro interno do servidor.' });
     }
-
-    res.json({ reply: response });
 });
 
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-});
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Servidor rodando em http://localhost:${port}`);
+    });
+}
+
+module.exports = app;
