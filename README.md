@@ -14,14 +14,11 @@ Este projeto é um chatbot de inteligência artificial que simula entrevistas de
 - **MongoDB**: Banco de dados NoSQL para armazenar as perguntas e respostas.
 - **CORS**: Middleware para permitir requisições de diferentes origens.
 - **Supertest**: Biblioteca para testes de APIs.
-- 
+  
 <h2>Status do Projeto</h2>
 <p align="left">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=%20DESENVOLVIDO&color=GREEN&style=for-the-badge"/>
 </p>
-
-<h2>Demonstração da Aplicação</h2>
-https://github.com/user-attachments/assets/25977c4d-9bac-4509-af83-ddb908ed8629
 
 
 ## Como Executar o Projeto
@@ -43,8 +40,14 @@ https://github.com/user-attachments/assets/25977c4d-9bac-4509-af83-ddb908ed8629
 6. Acesse o chatBot através do EndPoint
     ```bash
     POST http://localhost:3000/chat
+    
+
+# Autor
+
+ [<img loading="lazy" src="https://github.com/MoisesHsilva1/Projeto-E2E/assets/142702205/b1a9e6e2-60b0-4ce6-ba81-edcddd954366" width=115><br><sub>Moisés Henrique</sub>](https://github.com/MoisesHsilva1) 
 
 
-Testes
- ```bash
- npm test
+
+
+
+
