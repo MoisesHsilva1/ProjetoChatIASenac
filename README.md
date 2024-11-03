@@ -21,27 +21,6 @@ Este projeto é um chatbot de inteligência artificial que simula entrevistas de
 </p>
 
 
-## Como Executar o Projeto
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/projeto-chatbot.git
-   cd projeto-chatbot
-
-2. Installe as depencias
-    ```bash
-    npm install
-
-4. incie o servidor
-    ```bash
-   node public/server/server.js
-
-
-6. Acesse o chatBot através do EndPoint
-    ```bash
-    POST http://localhost:3000/chat
-    
-
 # Autor
 
  [<img loading="lazy" src="https://github.com/MoisesHsilva1/Projeto-E2E/assets/142702205/b1a9e6e2-60b0-4ce6-ba81-edcddd954366" width=115><br><sub>Moisés Henrique</sub>](https://github.com/MoisesHsilva1) 
